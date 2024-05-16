@@ -1,0 +1,54 @@
+---
+import Badge from '../components/Badge.astro';
+import SocialPill from '../components/SocialPill.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import TwitterIcon from '../components/icons/Twitter.astro';
+import MailIcon from '../components/icons/Mail.astro';
+---
+
+<img 
+class="rounded-full size-24 mb-6"
+src="my-photo.jpeg" 
+alt="Samuel's photo"
+/>
+<h1 
+    class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+    Hola, soy Samuel 
+        <a 
+            href="https://www.linkedin.com/in/spalominor/"
+            target="_blank"
+            class="flex justify-center items-center"
+            rel="noopener noreferrer"
+            >
+            <Badge>Disponible para trabajar</Badge>
+        </a>
+</h1>
+<h2 class="text-2xl text-wrap">
+    Estudiante de Ingeniería de Sistemas e Informática
+    <span class="text-blue-200/90">
+        Especializado en el desarrollo de aplicaciones web y la Ciencia de Datos. 
+    </span>
+    <span>
+        Medellín, Colombia 🇨🇴.
+    </span>
+</h2>
+
+<nav class="flex gap-3 mt-8">
+    <SocialPill href="https://www.linkedin.com/in/spalominor/">
+        LinkedIn
+        <LinkedInIcon />
+    </SocialPill>
+    <SocialPill href="https://www.github.com/spalominor">
+        GitHub
+        <GitHubIcon />
+    </SocialPill>
+    <SocialPill href="https://www.twitter.com/spalominor">
+        Twitter
+        <TwitterIcon />
+    </SocialPill>
+    <SocialPill href="mailto:spalominor@unal.edu.co">
+        Email
+        <MailIcon />
+    </SocialPill>
+</nav>
