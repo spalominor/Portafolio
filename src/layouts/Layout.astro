@@ -1,18 +1,27 @@
 ---
+// Importar la fuente instalada >>> npm install @fontsource/onest
 import "@fontsource-variable/onest"
 
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import { ViewTransitions } from "astro:transitions"
+// Importación de componentes personalizados
+// Importa el componente Header
+import Header from "../components/Header.astro" 
 
+// Importa el componente Footer
+import Footer from "../components/Footer.astro" 
+
+// Importa transiciones de vista
+import { ViewTransitions } from "astro:transitions" 
+
+// Definición de interfaz para las propiedades del documento
 interface Props {
-  title: string
-  description: string
+  title: string 
+  description: string 
 }
 
+// Extracción de propiedades del documento
 const { description, title } = Astro.props
 ---
-
+<!-- Lienzo principal donde mostrar las páginas -->
 <!doctype html>
 <html lang="es">
   <head>
@@ -22,7 +31,7 @@ const { description, title } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ViewTransitions /> {/* Transiciones de vista */}
   </head>
 
   <body class="relative text-black dark:text-white">
@@ -31,11 +40,15 @@ const { description, title } = Astro.props
       bg-neutral-950
       bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
-    </div>			  
+    </div>		
+    {/* Componente Header */}	  
     <Header />
-    <slot />
-    <Footer />
-    <style is:global>
+    {/* Contenido dinámico por llenar */} 
+    <slot /> 
+    {/* Componente Footer */}
+    <Footer /> 
+    {/* Estilos globales de CSS para todos los componentes */}
+    <style is:global> 
       :root {
         color-scheme: light dark;
       }

@@ -1,4 +1,5 @@
 ---
+// Importar los iconos para las etiquetas desde components/icons
 import GitHub from "./icons/GitHub.astro"
 import AstroIcon from "./icons/Astro.astro"
 import ReactIcon from "./icons/React.astro"
@@ -9,8 +10,12 @@ import StreamlitIcon from "./icons/Streamlit.astro"
 import DjangoIcon from "./icons/Django.astro"
 import TailwindIcon from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
+
+// Importar el componente LinkButton para redireccionar al proyecto
 import LinkButton from "./LinkButton.astro"
 
+// Definir las etiquetas que pueden tener los proyectos
+// Cada etiqueta tiene un nombre, una clase para el color de fondo y un icono
 const TAGS = {
   ASTRO: {
     name: "Astro",
@@ -54,6 +59,8 @@ const TAGS = {
   }
 }
 
+// Definir los proyectos con su título, descripción, enlace, imagen y etiquetas
+// Desde aquí puedes agregar, modificar o eliminar proyectos
 const PROJECTS = [
   {
     title: "MiniLink - Acortador de enlaces",
@@ -61,7 +68,7 @@ const PROJECTS = [
       "Puedes convertir URLs largas en enlaces cortos que son más fáciles de compartir, recordar y almacenar. Creada con Astro, React y TypeScript.",
     link: "https://minilink.fly.dev/",
     github: "https://github.com/spalominor/MiniLink",
-    image: "/minilink.png",
+    image: "/minilink.webp",
     tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TYPESRCIPT],
   },
   {
@@ -70,7 +77,7 @@ const PROJECTS = [
       "Puedes buscar entre más de 40.000 películas su descripción, calificación o año de lanzamiento. Hecho desde cero con Python, Pandas, Whoosh y Streamlit",
     link: "https://buscatupelicula.streamlit.app/",
     github: "https://github.com/spalominor/BuscaTuPelicula",
-    image: "/buscatupelicula.png",
+    image: "/buscatupelicula.webp",
     tags: [TAGS.PYTHON, TAGS.PANDAS, TAGS.STREAMLIT],
   },
   {
@@ -79,12 +86,12 @@ const PROJECTS = [
       "Puedes consultar y registrar información sobre tus vehículos y las rutas que hacen. Desarrollada con Django, Tailwind y otras librerías de Python.",
     link: "https://flutas-3445099c748b.herokuapp.com/",
     github: "https://github.com/spalominor/ppi_dai_PALOMINOs",
-    image: "/minilink.png",
+    image: "/flutas.webp",
     tags: [TAGS.DJANGO, TAGS.TAILWIND, TAGS.PYTHON]
   }
 ]
 ---
-
+<!-- Mapear los proyectos y dibujar sus componentes por igual -->
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
@@ -101,6 +108,7 @@ const PROJECTS = [
     </h3>
     <div class="flex flex-wrap mt-2">
       <ul class="flex flex-row mb-2 gap-x-2">
+          <!-- Mapear las etiquetas de cada proyecto y dibujarlas -->
           {
             tags.map((tag) => (
               <li>
@@ -115,6 +123,7 @@ const PROJECTS = [
           }
         </ul>
 
+      {<!-- Dibujar los botones para GitHub y el proyecto -->}
       <div class="mt-2 text-white-700 text dark:text-gray-400">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (
