@@ -27,24 +27,20 @@ const { description, title } = Astro.props
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions /> {/* Transiciones de vista */}
   </head>
 
-  <body class="relative text-black dark:text-white">
-    <div 
-      class="absolute top-0 z-[-2] h-full w-screen
-      bg-neutral-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-    >
-    </div>		
+  <body class="relative text-black dark:text-white bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] flex flex-col min-h-screen">
     {/* Componente Header */}	  
     <Header />
     {/* Contenido dinámico por llenar */} 
-    <slot /> 
+    <main class="flex-1 container mx-auto w-full px-4 sm:px-6 lg:px-8">
+      <slot />
+    </main>
     {/* Componente Footer */}
     <Footer /> 
     {/* Estilos globales de CSS para todos los componentes */}

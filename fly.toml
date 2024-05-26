@@ -1,18 +1,15 @@
-# fly.toml app configuration file generated for spalominor on 2024-05-08T10:44:53-05:00
+# fly.toml app configuration file generated for samuelpalomino on 2024-05-26T13:25:47-05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'spalominor'
-primary_region = 'bog'
+app = 'samuelpalomino'
+primary_region = 'mia'
 
 [build]
 
-[env]
-  PORT = '8080'
-
 [http_service]
-  internal_port = 8080
+  internal_port = 80
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
